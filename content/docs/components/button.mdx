@@ -1,0 +1,56 @@
+---
+title: Button
+description: A button component with multiple variants.
+---
+
+import { ComponentPreview } from "@/components/component-preview"
+import { ButtonDemo, ButtonSizes } from "@/components/examples/button-demo"
+
+## Preview
+
+<ComponentPreview>
+  <ButtonDemo />
+</ComponentPreview>
+
+## Installation
+
+```bash
+npx shadcn@latest add @odiaui/button
+```
+
+## Usage
+
+```tsx
+import { Button } from "@/components/ui/button"
+
+export function Example() {
+  return <Button>Click me</Button>
+}
+```
+
+## Variants
+
+<ComponentPreview>
+  <ButtonDemo />
+</ComponentPreview>
+
+```tsx
+<Button variant="default">Default</Button>
+<Button variant="secondary">Secondary</Button>
+<Button variant="destructive">Destructive</Button>
+<Button variant="outline">Outline</Button>
+<Button variant="ghost">Ghost</Button>
+<Button variant="link">Link</Button>
+```
+
+## Sizes
+
+<ComponentPreview>
+  <ButtonSizes />
+</ComponentPreview>
+
+```tsx
+<Button size="lg">Large</Button>
+<Button>Default</Button>
+<Button size="sm">Small</Button>
+```

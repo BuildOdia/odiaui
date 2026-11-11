@@ -1,0 +1,14 @@
+{
+  "$schema": "https://scnstack.sh/schema/scn-stack.json",
+  "name": "odiaui",
+  "style": "new-york",
+  "homepage": "https://odiaui.vercel.app",
+  "target": "hosted",
+  "framework": "nextjs",
+  "docsEngine": "fumadocs",
+  "baseLibrary": "radix",
+  "namespace": "@odiaui",
+  "features": {
+    "skills": true
+  }
+}

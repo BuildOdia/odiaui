@@ -1,0 +1,9 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "name": "odiaui",
+  "homepage": "https://odiaui.vercel.app",
+  "include": [
+    "registry/new-york/ui/registry.json",
+    "registry/new-york/themes/registry.json"
+  ]
+}

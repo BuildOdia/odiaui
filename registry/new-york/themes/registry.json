@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "items": [
+    {
+      "name": "theme-odiaui",
+      "type": "registry:theme",
+      "title": "odiaui Theme",
+      "description": "Custom theme for odiaui.",
+      "cssVars": {},
+      "files": [
+        {
+          "path": "odiaui.css",
+          "type": "registry:theme"
+        }
+      ]
+    }
+  ]
+}

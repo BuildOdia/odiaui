@@ -1,0 +1,10 @@
+{
+  "title": "odiaui",
+  "pages": [
+    "---Getting Started---",
+    "index",
+    "installation",
+    "---Components---",
+    "...components"
+  ]
+}
