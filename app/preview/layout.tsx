@@ -1,13 +1,7 @@
-import "../globals.css"
-
 export default function PreviewLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
-  return (
-    <html lang="en">
-      <body className="antialiased">{children}</body>
-    </html>
-  )
+  return <div className="min-h-svh bg-background text-foreground">{children}</div>
 }

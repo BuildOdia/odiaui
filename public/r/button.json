@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "button",
+  "title": "Rolling Button",
+  "description": "A button that rolls each letter upward on hover.",
+  "dependencies": [
+    "class-variance-authority"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york/ui/button.tsx",
+      "content": "\"use client\"\n\nimport * as React from \"react\"\nimport { cva, type VariantProps } from \"class-variance-authority\"\nimport { cn } from \"@/lib/utils\"\n\nconst rollingButtonVariants = cva(\n  \"group relative inline-flex cursor-pointer items-center justify-center overflow-hidden rounded-full font-bold leading-[1.6] whitespace-nowrap select-none transition-colors outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50 disabled:pointer-events-none disabled:opacity-50\",\n  {\n    variants: {\n      variant: {\n        default: \"bg-primary text-primary-foreground hover:bg-primary/90\",\n        secondary: \"bg-secondary text-secondary-foreground hover:bg-secondary/80\",\n        outline:\n          \"border border-input bg-background text-foreground hover:bg-accent\",\n        ghost: \"text-foreground hover:bg-accent\",\n      },\n      size: {\n        default: \"px-6 pt-[13px] pb-[11px] text-base\",\n        sm: \"px-4 pt-[9px] pb-[7px] text-sm\",\n        lg: \"px-8 pt-[16px] pb-[14px] text-lg\",\n      },\n    },\n    defaultVariants: {\n      variant: \"default\",\n      size: \"default\",\n    },\n  }\n)\n\nexport interface RollingButtonProps\n  extends Omit<React.ComponentProps<\"button\">, \"children\">,\n    VariantProps<typeof rollingButtonVariants> {\n  /** Button label. Must be a plain string so it can be split into letters. */\n  children: string\n  /** Delay between each letter, in ms. */\n  stagger?: number\n}\n\nfunction RollingButton({\n  className,\n  variant,\n  size,\n  children,\n  stagger = 20,\n  ...props\n}: RollingButtonProps) {\n  const chars = Array.from(children)\n\n  return (\n    <button\n      data-slot=\"rolling-button\"\n      aria-label={children}\n      className={cn(rollingButtonVariants({ variant, size }), className)}\n      {...props}\n    >\n      <span aria-hidden className=\"flex w-max overflow-hidden\">\n        {chars.map((char, i) => (\n          <span key={i} className=\"relative block shrink-0 whitespace-pre\">\n            {/* visible letter */}\n            <span\n              className=\"block transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:-translate-y-full\"\n              style={{ transitionDelay: `${i * stagger}ms` }}\n            >\n              {char}\n            </span>\n            {/* incoming letter */}\n            <span\n              className=\"absolute inset-0 block translate-y-full transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:translate-y-0\"\n              style={{ transitionDelay: `${i * stagger}ms` }}\n            >\n              {char}\n            </span>\n          </span>\n        ))}\n      </span>\n    </button>\n  )\n}\n\nexport { RollingButton, rollingButtonVariants }\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}

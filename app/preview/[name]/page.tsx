@@ -9,13 +9,14 @@ import * as React from "react"
  */
 
 // Import your component demos here
-// import { ButtonDemo } from "@/components/examples/button-demo"
-// import { CardDemo } from "@/components/examples/card-demo"
+import { ButtonDemo } from "@/components/examples/button-demo"
+import { BadgeDemo } from "@/components/examples/badge-demo"
+import { CardDemo } from "@/components/examples/card-demo"
 
 const PREVIEWS: Record<string, React.ComponentType> = {
-  // Add entries as you create components:
-  // button: ButtonDemo,
-  // card: CardDemo,
+  button: ButtonDemo,
+  badge: BadgeDemo,
+  card: CardDemo,
 }
 
 export default async function PreviewPage(props: {

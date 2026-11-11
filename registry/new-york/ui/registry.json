@@ -4,8 +4,8 @@
     {
       "name": "button",
       "type": "registry:ui",
-      "title": "Button",
-      "description": "A button component with multiple variants.",
+      "title": "Rolling Button",
+      "description": "A button that rolls each letter upward on hover.",
       "dependencies": [
         "class-variance-authority"
       ],

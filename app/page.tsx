@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Home() {
   return (
     <div className="max-w-3xl mx-auto flex flex-col min-h-svh px-4 py-8 gap-8">
@@ -15,12 +17,12 @@ export default function Home() {
           </div>
         </div>
         <div className="flex gap-4">
-          <a
+          <Link
             href="/docs"
             className="rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground hover:bg-primary/90"
           >
             Documentation
-          </a>
+          </Link>
           <a
             href="/r/registry.json"
             className="rounded-md border px-4 py-2 text-sm font-medium hover:bg-accent"

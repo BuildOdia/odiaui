@@ -1,12 +1,14 @@
 ---
 title: Button
-description: A button component with multiple variants.
+description: A button that rolls each letter upward on hover.
 ---
 
 import { ComponentPreview } from "@/components/component-preview"
 import { ButtonDemo, ButtonSizes } from "@/components/examples/button-demo"
 
 ## Preview
+
+Hover the buttons to see the letter animation.
 
 <ComponentPreview>
   <ButtonDemo />
@@ -21,10 +23,10 @@ npx shadcn@latest add @odiaui/button
 ## Usage
 
 ```tsx
-import { Button } from "@/components/ui/button"
+import { RollingButton } from "@/components/ui/button"
 
 export function Example() {
-  return <Button>Click me</Button>
+  return <RollingButton>Hover me</RollingButton>
 }
 ```
 
@@ -35,12 +37,10 @@ export function Example() {
 </ComponentPreview>
 
 ```tsx
-<Button variant="default">Default</Button>
-<Button variant="secondary">Secondary</Button>
-<Button variant="destructive">Destructive</Button>
-<Button variant="outline">Outline</Button>
-<Button variant="ghost">Ghost</Button>
-<Button variant="link">Link</Button>
+<RollingButton variant="default">Default</RollingButton>
+<RollingButton variant="secondary">Secondary</RollingButton>
+<RollingButton variant="outline">Outline</RollingButton>
+<RollingButton variant="ghost">Ghost</RollingButton>
 ```
 
 ## Sizes
@@ -50,7 +50,29 @@ export function Example() {
 </ComponentPreview>
 
 ```tsx
-<Button size="lg">Large</Button>
-<Button>Default</Button>
-<Button size="sm">Small</Button>
+<RollingButton size="lg">Large</RollingButton>
+<RollingButton>Default</RollingButton>
+<RollingButton size="sm">Small</RollingButton>
 ```
+
+## Stagger
+
+Each letter starts its animation slightly after the previous one. Control the
+gap with the `stagger` prop (in milliseconds).
+
+```tsx
+<RollingButton stagger={40}>Slow roll</RollingButton>
+<RollingButton stagger={0}>All at once</RollingButton>
+```
+
+## API
+
+| Prop       | Type                                          | Default     |
+| ---------- | --------------------------------------------- | ----------- |
+| `children` | `string`                                      | required    |
+| `variant`  | `"default" \| "secondary" \| "outline" \| "ghost"` | `"default"` |
+| `size`     | `"sm" \| "default" \| "lg"`                   | `"default"` |
+| `stagger`  | `number`                                      | `20`        |
+
+All native `<button>` props are supported. `children` must be a plain string
+because the component splits it into individual letters for the animation.

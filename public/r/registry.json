@@ -1,0 +1,62 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "name": "odiaui",
+  "homepage": "https://odiaui.vercel.app",
+  "items": [
+    {
+      "name": "button",
+      "title": "Rolling Button",
+      "description": "A button that rolls each letter upward on hover.",
+      "dependencies": [
+        "class-variance-authority"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york/ui/button.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "name": "card",
+      "title": "Card",
+      "description": "A card component with header, content, and footer.",
+      "files": [
+        {
+          "path": "registry/new-york/ui/card.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "name": "badge",
+      "title": "Badge",
+      "description": "A badge component with multiple variants.",
+      "dependencies": [
+        "class-variance-authority"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york/ui/badge.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "name": "theme-odiaui",
+      "title": "odiaui Theme",
+      "description": "Custom theme for odiaui.",
+      "files": [
+        {
+          "path": "registry/new-york/themes/odiaui.css",
+          "type": "registry:theme"
+        }
+      ],
+      "cssVars": {},
+      "type": "registry:theme"
+    }
+  ]
+}

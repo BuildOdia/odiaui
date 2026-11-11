@@ -28,6 +28,22 @@ Then install components:
 bunx shadcn@latest add @odiaui/button
 ```
 
+## Deploy
+
+Set `NEXT_PUBLIC_SITE_URL` to your production URL before building (Vercel →
+Project → Settings → Environment Variables). It is used in the installation
+docs, `llms.txt`, and v0 links.
+
+```bash
+NEXT_PUBLIC_SITE_URL=https://odiaui.vercel.app
+```
+
+If you deploy to a different domain, update the same value in `registry.json`
+and `components.json` as well.
+
+The `build` script runs `shadcn build` automatically, so `public/r/*.json` is
+always regenerated before `next build`.
+
 ## Build Registry
 
 ```bash
@@ -40,7 +56,7 @@ This generates static JSON files in `public/r/` for each registry item.
 
 ```
 ├── registry.json              # Registry definition
-├── registry/default/          # Component source files
+├── registry/new-york/         # Component source files
 ├── public/r/                  # Built registry output (generated)
 ├── content/docs/              # Documentation (MDX)
 └── components.json            # shadcn config
